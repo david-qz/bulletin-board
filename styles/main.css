@@ -1,11 +1,10 @@
 :root {
     --background: rgb(224, 234, 247);
-    --header-background: white;
-    --footer-background: rgb(243, 242, 242);
+    --header-background: rgb(230, 225, 207);
+    --footer-background: rgb(187, 187, 187);
 }
 
 body {
-    height: 100%;
     padding-bottom: 30px;
     font-family: 'Rubik', san-serif;
 }
@@ -16,10 +15,6 @@ header {
     display: flex;
     align-items: center;
     background-color: var(--header-background);
-}
-
-main {
-    height: 100%;
 }
 
 footer {
