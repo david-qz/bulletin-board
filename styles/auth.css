@@ -1,0 +1,29 @@
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+form {
+    padding: 15px;
+    border: 1px solid black;
+}
+
+form h2 {
+    margin: 0;
+}
+
+form input, form label {
+    display: block;
+}
+
+form label {
+    margin: 20px 0;
+}
+
+form input {
+    margin-top: 5px;
+}
