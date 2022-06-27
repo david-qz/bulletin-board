@@ -1,16 +1,16 @@
 // import services and utilities
 import { getUser, signOut } from '/services/auth-service.js';
-import { getPosts } from '/services/data-service.js';
+import { getBulletins } from '/services/data-service.js';
 
 // import component creators
 import createBulletinList from '/components/BulletinList.js';
 
 // declare state variables
-let posts = [];
+let bulletins = [];
 
 // write handler functions
 async function handlePageLoad() {
-    posts = await getPosts();
+    bulletins = await getBulletins();
 
     display();
 }
@@ -22,7 +22,7 @@ const BulletinList = createBulletinList(document.querySelector('#bulletin-list')
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
-    BulletinList({ bulletins: posts });
+    BulletinList({ bulletins });
 }
 
 // Call display on page load

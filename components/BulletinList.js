@@ -14,10 +14,10 @@ function createBulletin(bulletin) {
     titleElement.textContent = bulletin.title;
 
     const contentElement = document.createElement('p');
-    contentElement.textContent = bulletin.description;
+    contentElement.textContent = bulletin.content;
 
     const posterElement = document.createElement('p');
-    posterElement.textContent = bulletin.contact;
+    posterElement.textContent = bulletin.userContact;
 
     const timestampElement = document.createElement('p');
     timestampElement.textContent = bulletin.createdAt;
