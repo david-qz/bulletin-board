@@ -3,6 +3,7 @@ import { getUser, signOut } from '/services/auth-service.js';
 import { getPosts } from '/services/data-service.js';
 
 // import component creators
+import createBulletinList from '/components/BulletinList.js';
 
 // declare state variables
 let posts = [];
@@ -17,10 +18,11 @@ async function handlePageLoad() {
 // Create each component:
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object
+const BulletinList = createBulletinList(document.querySelector('#bulletin-list'));
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
-    // Call each component passing in props that are the pieces of state this component needs
+    BulletinList({ bulletins: posts });
 }
 
 // Call display on page load
