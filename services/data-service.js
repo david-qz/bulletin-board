@@ -18,3 +18,16 @@ export async function getBulletins() {
 
     return response.data;
 }
+
+export async function postBulletin(title, content, contactInfo) {
+    const response = await client
+        .from(TABLE)
+        .insert([{
+            title,
+            description: content,
+            contact: contactInfo,
+        }])
+        .single();
+
+    return response;
+}
