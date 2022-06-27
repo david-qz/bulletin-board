@@ -26,8 +26,10 @@ async function handlePageLoad() {
 async function handleSignInOut() {
     if (state.signedIn) {
         await signOut();
+        state.user = null;
+        display();
     } else {
-        location = '/auth';
+        location.replace('/auth');
     }
 }
 
