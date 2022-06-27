@@ -5,16 +5,39 @@
 }
 
 body {
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     font-family: 'Rubik', san-serif;
 }
 
 header {
     position: sticky;
     top: 0;
+    padding: 5px 10px;
+    background-color: var(--header-background);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .left {
     display: flex;
     align-items: center;
-    background-color: var(--header-background);
+    column-gap: 10px;
+}
+
+header .right {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+main {
+    padding: 10px;
 }
 
 footer {
