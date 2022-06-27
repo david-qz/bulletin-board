@@ -3,5 +3,7 @@ export default function createNewPostButton(button, { handleNewPost }) {
         handleNewPost();
     });
 
-    return () => {};
+    return ({ signedIn }) => {
+        button.classList.toggle('hidden', !signedIn);
+    };
 }
