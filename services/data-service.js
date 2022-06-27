@@ -5,14 +5,14 @@ const TABLE = 'posts';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export async function getPosts() {
+export async function getBulletins() {
     const response = await client
         .from(TABLE)
         .select(`
             title,
-            description,
+            content: description,
             createdAt: created_at,
-            contact
+            userContact: contact
         `)
         .order('created_at', { ascending: false });
 
