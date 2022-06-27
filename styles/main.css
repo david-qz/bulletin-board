@@ -50,3 +50,7 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+.hidden {
+    display: none;
+}

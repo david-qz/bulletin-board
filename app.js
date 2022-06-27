@@ -49,7 +49,7 @@ const BulletinList = createBulletinList(document.querySelector('#bulletin-list')
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
-    NewPostButton();
+    NewPostButton({ signedIn: state.signedIn });
     SignInOut({
         signedIn: state.signedIn,
         username: state.user?.email,
