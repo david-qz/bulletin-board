@@ -30,7 +30,7 @@ async function handleSignInOut() {
         state.user = null;
         display();
     } else {
-        location.replace('/auth');
+        location.assign('/auth');
     }
 }
 
