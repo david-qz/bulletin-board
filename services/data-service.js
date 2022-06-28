@@ -19,13 +19,13 @@ export async function getBulletins() {
     return response.data;
 }
 
-export async function postBulletin(title, content, contactInfo) {
+export async function postBulletin(title, content, userInfo) {
     const response = await client
         .from(TABLE)
         .insert([{
             title,
             description: content,
-            contact: contactInfo,
+            contact: userInfo,
         }])
         .single();
 

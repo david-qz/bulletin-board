@@ -18,8 +18,8 @@ async function handlePageLoad() {
     display();
 }
 
-function handleNewBulletin({ title, content, contactInfo }) {
-    postBulletin(title, content, contactInfo);
+async function handleNewBulletin({ title, content, userInfo }) {
+    await postBulletin(title, content, userInfo);
     location.assign('/');
 }
 
