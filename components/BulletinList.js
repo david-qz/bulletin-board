@@ -18,15 +18,15 @@ function createBulletin(bulletin) {
     contentElement.textContent = bulletin.content;
     contentElement.classList.add('content');
 
-    const posterElement = document.createElement('p');
-    posterElement.textContent = bulletin.userContact;
-    posterElement.classList.add('contact');
+    const userInfoElement = document.createElement('p');
+    userInfoElement.textContent = bulletin.userInfo;
+    userInfoElement.classList.add('contact');
 
     const timestampElement = document.createElement('p');
     timestampElement.textContent = bulletin.createdAt;
     timestampElement.classList.add('timestamp');
 
     const li = document.createElement('li');
-    li.append(titleElement, contentElement, posterElement, timestampElement);
+    li.append(titleElement, contentElement, userInfoElement, timestampElement);
     return li;
 }
