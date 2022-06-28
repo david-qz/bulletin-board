@@ -9,7 +9,9 @@ import createNewBulletinForm from '/components/NewBulletinForm.js';
 async function handlePageLoad() {
     const user = await getUser();
     if (!user) {
-        location.replace('/');
+        const searchParams = new URLSearchParams();
+        searchParams.set('from', '/create-post');
+        location.replace('/auth/?' + searchParams.toString());
         return;
     }
 

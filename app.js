@@ -30,7 +30,9 @@ async function handleSignInOut() {
         state.user = null;
         display();
     } else {
-        location.assign('/auth');
+        const searchParams = new URLSearchParams();
+        searchParams.set('from', '/');
+        location.assign('/auth/?' + searchParams.toString());
     }
 }
 
