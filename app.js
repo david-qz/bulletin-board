@@ -64,7 +64,7 @@ const BulletinList = createBulletinList(document.querySelector('#bulletin-list')
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
-    NewBulletinButton({ signedIn: state.signedIn });
+    NewBulletinButton({ signedIn: true }); // Leaving this until I decide if this button should hide
     SignInOut({
         signedIn: state.signedIn,
         username: state.user?.email,
