@@ -5,6 +5,7 @@ main {
 }
 
 li {
+    position: relative;
     padding: 10px 0;
     border-bottom: 1px dashed black;
 }
@@ -24,4 +25,26 @@ li {
     text-align: right;
     font-size: 0.8em;
     color: darkgrey;
+}
+
+.delete-button {
+    display: none;
+
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 2px;
+
+    background-color: white;
+    border: none;
+    color: rgb(80, 80, 80);
+}
+
+li:hover .delete-button {
+    display: block;
+}
+
+.delete-button:hover {
+    color: red;
+    transform: rotate(-15deg);
 }
