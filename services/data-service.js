@@ -12,7 +12,7 @@ export async function getBulletins() {
             title,
             content: description,
             createdAt: created_at,
-            userContact: contact
+            userInfo: contact
         `)
         .order('created_at', { ascending: false });
 

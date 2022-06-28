@@ -1,6 +1,6 @@
-export default function createNewPostButton(button, { handleNewPost }) {
+export default function createNewBulletinButton(button, { handleNewBulletin }) {
     button.addEventListener('click', () => {
-        handleNewPost();
+        handleNewBulletin();
     });
 
     return ({ signedIn }) => {
