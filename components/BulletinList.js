@@ -23,7 +23,7 @@ function createBulletin(bulletin, { handleDeleteBulletin }) {
     userInfoElement.classList.add('contact');
 
     const timestampElement = document.createElement('p');
-    timestampElement.textContent = (new Date(bulletin.createdAt)).toLocaleString();
+    timestampElement.textContent = new Date(bulletin.createdAt).toLocaleString();
     timestampElement.classList.add('timestamp');
 
     const deleteButton = document.createElement('button');
