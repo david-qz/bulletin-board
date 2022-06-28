@@ -6,7 +6,7 @@ export default function createNewBulletinForm(form, { handleNewBulletin }) {
         handleNewBulletin({
             title: formData.get('title'),
             content: formData.get('content'),
-            contactInfo: formData.get('contact'),
+            userInfo: formData.get('contact'),
         });
     });
 
