@@ -41,11 +41,13 @@ function handleNewBulletin() {
 }
 
 async function handleDeleteBulletin(id) {
-    const response = await deleteBulletin(id);
+    if (state.signedIn) {
+        const response = await deleteBulletin(id);
 
-    if (!response.error) {
-        state.bulletins = await getBulletins();
-        display();
+        if (!response.error) {
+            state.bulletins = await getBulletins();
+            display();
+        }
     }
 }
 
