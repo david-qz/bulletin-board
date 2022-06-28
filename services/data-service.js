@@ -9,6 +9,7 @@ export async function getBulletins() {
     const response = await client
         .from(TABLE)
         .select(`
+            id,
             title,
             content: description,
             createdAt: created_at,
@@ -28,6 +29,15 @@ export async function postBulletin(title, content, userInfo) {
             contact: userInfo,
         }])
         .single();
+
+    return response;
+}
+
+export async function deleteBulletin(id) {
+    const response = await client
+        .from(TABLE)
+        .delete()
+        .match({ id });
 
     return response;
 }

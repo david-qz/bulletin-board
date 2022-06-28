@@ -1,6 +1,6 @@
 // import services and utilities
 import { getUser, signOut } from '/services/auth-service.js';
-import { getBulletins } from '/services/data-service.js';
+import { getBulletins, deleteBulletin } from '/services/data-service.js';
 
 // import component creators
 import createNewBulletinButton from './components/NewBulletinButton.js';
@@ -40,6 +40,15 @@ function handleNewBulletin() {
     location.assign('/create-post');
 }
 
+async function handleDeleteBulletin(id) {
+    const response = await deleteBulletin(id);
+
+    if (!response.error) {
+        state.bulletins = await getBulletins();
+        display();
+    }
+}
+
 // Create each component:
 const NewBulletinButton = createNewBulletinButton(document.querySelector('#post-bulletin'), {
     handleNewBulletin
@@ -47,7 +56,9 @@ const NewBulletinButton = createNewBulletinButton(document.querySelector('#post-
 const SignInOut = createSignInOut(document.querySelector('#sign-in-out'), {
     handleSignInOut
 });
-const BulletinList = createBulletinList(document.querySelector('#bulletin-list'));
+const BulletinList = createBulletinList(document.querySelector('#bulletin-list'), {
+    handleDeleteBulletin
+});
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
