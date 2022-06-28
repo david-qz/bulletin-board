@@ -23,7 +23,7 @@ function createBulletin(bulletin) {
     userInfoElement.classList.add('contact');
 
     const timestampElement = document.createElement('p');
-    timestampElement.textContent = bulletin.createdAt;
+    timestampElement.textContent = (new Date(bulletin.createdAt)).toLocaleString();
     timestampElement.classList.add('timestamp');
 
     const li = document.createElement('li');
