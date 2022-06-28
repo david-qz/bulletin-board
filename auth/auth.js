@@ -8,6 +8,7 @@ import createErrorMessage from '../components/ErrorMessage.js';
 // declare state
 const state = {
     error: '',
+    destination: '/',
 };
 
 // write handler functions
@@ -17,6 +18,9 @@ async function handlePageLoad() {
         location.replace('/');
         return;
     }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    state.destination = searchParams.get('from') || '/';
 
     display();
 }
@@ -38,7 +42,7 @@ function checkAuth(response) {
         state.error = response.error.message;
         display();
     } else {
-        location.replace('/');
+        location.replace(state.destination);
     }
 }
 
